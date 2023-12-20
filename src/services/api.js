@@ -1,6 +1,6 @@
 import axios from 'axios';
 
 export const api = axios.create({
-  // baseURL: 'http://localhost:7070',
-  baseURL: 'https://products-inventory-api.onrender.com',
+  // baseURL: 'http://15.229.71.122',
+  baseURL: 'http://15.229.71.122:7070',
 });
