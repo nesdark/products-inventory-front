@@ -92,8 +92,47 @@ export function EditDish() {
               <select id="category" onChange={handleCategory} value={category}>
                 <option value="">Selecione uma opção</option>
                 <option value="Bujias">Bujias</option>
-                <option value="Termometro">Termometro</option>
-                <option value="Kit de Sutura">Kit de Sutura</option>
+                <option value="">Selecione uma opção</option>
+                <option value="Bujias">Bujias</option>
+                <option value="Tren delantero">Tren delantero</option>
+                <option value="Terminal">Terminal</option>
+                <option value="Rotula">Rotula</option>
+                <option value="GEMELOS BARRA ESTABILIZADORA">
+                  GEMELOS BARRA ESTABILIZADORA
+                </option>
+                <option value="BUJE PEQUENO TIJERA DELANTERA">
+                  BUJE PEQUEÑO TIJERA DELANTERA
+                </option>
+                <option value="BUJE GRANDE TIJERA ">BUJE GRANDE TIJERA </option>
+                <option value="GOMAS U O GOMAS SECTOR">
+                  GOMAS U O GOMAS SECTOR
+                </option>
+                <option value="BASE AMORTIGUADOR DELANTERA">
+                  BASE AMORTIGUADOR DELANTERA
+                </option>
+                <option value="RODAMIENTO DELANTERO">
+                  RODAMIENTO DELANTERO
+                </option>
+                <option value="BOCINA DELANTERAS">BOCINA DELANTERAS</option>
+                <option value="MOZO TRASERO - RODAMIENTO TRASERO">
+                  MOZO TRASERO - RODAMIENTO TRASERO
+                </option>
+                <option value="RODAMIENTO BASE AMORTIGUADOR">
+                  RODAMIENTO BASE AMORTIGUADOR
+                </option>
+                <option value="GOMA BARRA ESTABILIZADORA DELANTERA">
+                  GOMA BARRA ESTABILIZADORA DELANTERA
+                </option>
+                <option value="TIJERA - BRAZOS OSCILANTES - DELANTERO">
+                  TIJERA - BRAZOS OSCILANTES - DELANTERO
+                </option>
+                <option value="PUNTAS DE TRIPOIDE">PUNTAS DE TRIPOIDE</option>
+                <option value="COPA CAJA">COPA CAJA</option>
+                <option value="TRICETA">TRICETA</option>
+                <option value="SOPORTES MOTOR Y CAJA">
+                  SOPORTES MOTOR Y CAJA
+                </option>
+                <option value="MUNON">MUNON</option>
               </select>
             </label>
             <LabelInput
