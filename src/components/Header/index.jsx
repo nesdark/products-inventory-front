@@ -13,7 +13,7 @@ import { Button } from '../Button';
 import { IconButton } from '../IconButton';
 import { TextButton } from '../TextButton';
 import { Logo } from '../Logo';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 export function Header({ admin = false, search }) {
   const { signOut } = useAuth();
@@ -92,7 +92,9 @@ export function Header({ admin = false, search }) {
           <TextButton title="Sair" />
         </li>
       </Menu>
-      <IconButton icon={GoSignOut} size="32" onClick={signOut} />
+      <Link to="/">
+        <IconButton icon={GoSignOut} size="32" onClick={signOut} />
+      </Link>
     </Container>
   );
 }
