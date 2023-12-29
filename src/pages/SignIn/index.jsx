@@ -50,9 +50,9 @@ export function SignIn() {
 
         <Button type="submit" title="Entrar" onClick={handleSignIn} />
 
-        <Link to="/create">
+        {/* <Link to="/create">
           <TextButton type="button" title="Criar uma conta" />
-        </Link>
+        </Link> */}
       </FormScreen>
     </Container>
   );
