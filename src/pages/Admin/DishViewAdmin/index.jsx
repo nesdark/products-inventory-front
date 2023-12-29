@@ -32,7 +32,7 @@ export function DishViewAdmin() {
       {data && (
         <Main>
           <Link to="/">
-            <TextButton icon={BsChevronLeft} size={32} title="voltar" />
+            <TextButton icon={BsChevronLeft} size={32} title="volver" />
           </Link>
           <div>
             <Info>
@@ -47,7 +47,7 @@ export function DishViewAdmin() {
               </div>
               <SellOptions />
               <Link to={`/dish/update/${params.id}`}>
-                <Button title="Editar prato" />
+                <Button title="Editar producto" />
               </Link>
             </Info>
           </div>
