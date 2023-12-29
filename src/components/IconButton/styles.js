@@ -6,6 +6,8 @@ export const Container = styled.button`
   border: none;
 
   > svg {
-    color: ${({ theme }) => theme.COLORS.LIGHT};
+    fill: ${({ theme, $style }) => {
+      return $style ? $style : theme.COLORS.LIGHT;
+    }};
   }
 `;

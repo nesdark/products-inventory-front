@@ -13,7 +13,7 @@ import { Button } from '../Button';
 import { IconButton } from '../IconButton';
 import { TextButton } from '../TextButton';
 import { Logo } from '../Logo';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 export function Header({ admin = false, search }) {
   const { signOut } = useAuth();

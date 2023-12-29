@@ -1,13 +1,18 @@
 import { api } from '../../services/api.js';
+import { FaRegTrashCan } from 'react-icons/fa6';
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import { Container } from './styles';
 
+import { IconButton } from '../IconButton/index.jsx';
+
 export function Products({ search }) {
   const [products, setProducts] = useState([]);
 
   const navigate = useNavigate();
+
+  let timeoutRunning = false;
 
   useEffect(() => {
     async function fetchProductsBySearch() {
@@ -27,6 +32,36 @@ export function Products({ search }) {
     }
   }, [search]);
 
+  async function handleDeleteProduct(e) {
+    e.preventDefault();
+
+    if (!window.confirm('Estas seguro que deseas eliminar el producto?')) {
+      return;
+    }
+
+    if (!timeoutRunning) {
+      setTimeout(() => {
+        timeoutRunning = false;
+      }, 5000);
+      timeoutRunning = true;
+    }
+
+    let confirmation = () => {
+      return window.confirm('Estas seguro que deseas eliminar el producto?');
+    };
+
+    if (!timeoutRunning) {
+      if (confirmation) {
+        return;
+      }
+    }
+
+    // await api.delete(`/products/${params.id}`);
+
+    alert('Producto excluído con éxito!');
+    navigate('/');
+  }
+
   function handleDetails(id) {
     navigate(`/dish/${id}`);
   }
@@ -42,18 +77,37 @@ export function Products({ search }) {
             <th>Categoria</th>
             <th>Cantidad</th>
             <th>Fecha</th>
+            <th></th>
           </tr>
         </thead>
         <tbody>
           {products.map((product) => {
             return (
-              <tr onClick={() => handleDetails(product.id)}>
-                <td>{product.title}</td>
-                <td>$ {product.costPrice}</td>
-                <td>$ {product.salePrice}</td>
-                <td>{product.category}</td>
-                <td>{product.quantity}</td>
-                <td>06/12/2023</td>
+              <tr>
+                <td onClick={() => handleDetails(product.id)}>
+                  {product.title}
+                </td>
+                <td onClick={() => handleDetails(product.id)}>
+                  $ {product.costPrice}
+                </td>
+                <td onClick={() => handleDetails(product.id)}>
+                  $ {product.salePrice}
+                </td>
+                <td onClick={() => handleDetails(product.id)}>
+                  {product.category}
+                </td>
+                <td onClick={() => handleDetails(product.id)}>
+                  {product.quantity}
+                </td>
+                <td onClick={() => handleDetails(product.id)}>06/12/2023</td>
+                <td>
+                  <IconButton
+                    icon={FaRegTrashCan}
+                    size={24}
+                    $style="#8d0314"
+                    onClick={handleDeleteProduct}
+                  />
+                </td>
               </tr>
             );
           })}
