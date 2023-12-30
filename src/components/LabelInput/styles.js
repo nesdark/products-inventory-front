@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import theme from '../../pages/styles/theme';
-import { breakpoints } from '../../pages/styles/breakpoints';
 
 export const Container = styled.label`
   display: flex;
@@ -24,7 +23,7 @@ export const Container = styled.label`
     color: ${({ theme }) => theme.COLORS.LIGHT};
     font-size: 1.6rem;
 
-    background: ${({ theme }) => theme.COLORS.DARK_900};
+    background: ${({ theme }) => theme.COLORS.BG_GRAY};
   }
 
   input:placeholder {

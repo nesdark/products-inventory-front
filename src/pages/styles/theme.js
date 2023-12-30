@@ -2,21 +2,16 @@ export default {
   COLORS: {
     LIGHT: '#FFFFFF',
     LIGHT_300: '#E1E1E6',
-    LIGHT_400: '#C4C4CC',
     LIGHT_500: '#7C7C8A',
     LIGHT_600: '#76797B',
     LIGHT_700: '#4D585E',
 
-    DARK_BLUE: '#001119',
-    DARK_200: '#000204',
-    DARK_300: '#00070A',
-    DARK_400: '#000A0F',
-    DARK_500: '#7C7C8A',
-    DARK_600: '#00111A',
-    DARK_700: '#001119',
-    DARK_800: '#0D161B',
-    DARK_900: '#0D1D25',
-    DARK_1000: '#192227',
+    BG: '#060606',
+    BG_GRAY: '#131315',
+    GRAY_BORDER: '#222326',
+
+    LIGHT_BLUE_GRADIENT:
+      'linear-gradient(90deg, #458eb5 0.21%, rgba(67, 135, 204, 0.92) 39.94%,    #3f7dd7 62.79%)',
 
     TINTS_CAKE_200: '#82F3FF',
 

@@ -4,30 +4,37 @@ import { breakpoints } from '../../pages/styles/breakpoints';
 
 export const Container = styled.div`
   width: 100%;
-  max-width: 35.2rem;
+  max-width: 34.8rem;
 
   display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-items: left;
+  justify-content: space-between;
+  align-items: baseline;
   gap: 1.4rem;
 
   padding: 2.5rem 3.2rem;
 
   border-radius: 0.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.15);
 
   margin: clamp(4.4rem, 11.858vw - 0.675rem, 16.4rem) auto 6.2rem;
 
-  background: ${({ $type, $value }) =>
-    $type == 'total' ? ($value < 0 ? '#AB2626' : '#49aa26') : '#081c25'};
+  border-radius: 24px;
+  background-color: #0f1012;
+  background-image: linear-gradient(
+    2deg,
+    rgba(0, 0, 0, 0.7) 1.31%,
+    rgba(0, 0, 0, 0.5) 33.35%,
+    #0f1012 97.44%
+  );
 
   font-size: 1.6rem;
   color: ${({ theme }) => theme.COLORS.LIGHT_300};
 
   div {
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
-    align-items: center;
+    align-items: left;
     gap: 3.2rem;
   }
 

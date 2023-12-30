@@ -8,14 +8,16 @@ export const Container = styled.header`
   width: 100%;
   min-height: 10.4rem;
 
-  padding-inline: 3.2rem;
+  padding-inline: 2.3rem;
 
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 3.2rem;
 
-  background: ${({ theme }) => theme.COLORS.DARK_600};
+  border-bottom: 1px solid rgba(255, 255, 255, 0.32);
+
+  background: ${({ theme }) => theme.COLORS.BG};
 
   > h2 {
     font-size: 2.1rem;

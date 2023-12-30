@@ -5,12 +5,11 @@ export function Logo({ admin = false }) {
   return (
     <Container>
       <div>
-        <img src="./logo.jpg" alt="" />
         <Link to="/">
-          <span>JBC-Inventory</span>
+          <img src="../../public/logo.png" alt="logo autopartes" />
+          {admin ? <span>admin</span> : ''}
         </Link>
       </div>
-      {admin ? <span>admin</span> : ''}
     </Container>
   );
 }

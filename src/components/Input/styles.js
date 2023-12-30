@@ -12,34 +12,16 @@ export const Container = styled.label`
   justify-content: center;
   gap: 1.4rem;
 
+  border: 1px solid ${({ theme }) => theme.COLORS.GRAY_BORDER};
   border-radius: 0.5rem;
 
-  padding: 1.6rem 1.4rem;
+  padding: 1.2rem 1.4rem;
 
-  background-color: ${({ theme }) => theme.COLORS.DARK_900};
+  background-color: ${({ theme }) => theme.COLORS.BG_GRAY};
 
-  input[type='file'] {
-    display: none;
-  }
-
-  &:has(input[type='file']) {
-    width: 100%;
-
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-
-    max-width: 24rem;
-
-    border: none;
-    border-radius: 0.8rem;
-
-    padding: 1.2rem 1.4rem;
-
-    color: ${({ theme }) => theme.COLORS.LIGHT};
-    font-size: 1.6rem;
-
-    background: ${({ theme }) => theme.COLORS.DARK_800};
+  &:has(input:focus) {
+    filter: brightness(1.1);
+    border: 2px solid ${({ theme }) => theme.COLORS.GRAY_BORDER};
   }
 
   > input {
@@ -56,5 +38,7 @@ export const Container = styled.label`
     :placeholder-shown {
       color: ${({ theme }) => theme.COLORS.LIGHT_500};
     }
+
+    outline: none;
   }
 `;

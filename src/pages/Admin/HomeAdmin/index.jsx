@@ -5,7 +5,7 @@ import { Container, Main, DashBoard } from './styles';
 import { Header } from '../../../components/Header';
 import { Card } from '../../../components/Card';
 import { Products } from '../../../components/Products';
-import { Footer } from '../../../components/Footer';
+import { SideBar } from '../../../components/SideBar';
 
 export function HomeAdmin() {
   const [search, setSearch] = useState('');
@@ -41,23 +41,26 @@ export function HomeAdmin() {
   });
   return (
     <Container>
-      <Header admin search={setSearch} />
-      <Main>
-        <DashBoard>
-          <Card
-            $type="income"
-            title="Precio de venta"
-            $value={salePriceTotal}
-          />
-          <Card
-            $type="expense"
-            title="Precio de costo"
-            $value={costPriceTotal}
-          />
-          <Card $type="total" title="Total" $value={totalPrice} />
-        </DashBoard>
-        <Products search={search} />
-      </Main>
+      <SideBar />
+      <div>
+        <Header admin search={setSearch} />
+        <Main>
+          <DashBoard>
+            <Card
+              $type="expense"
+              title="Precio de costo"
+              $value={costPriceTotal}
+            />
+            <Card
+              $type="income"
+              title="Precio de venta"
+              $value={salePriceTotal}
+            />
+            <Card $type="total" title="Total" $value={totalPrice} />
+          </DashBoard>
+          <Products search={search} />
+        </Main>
+      </div>
     </Container>
   );
 }

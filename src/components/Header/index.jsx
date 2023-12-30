@@ -1,8 +1,8 @@
-import { Children, useRef } from 'react';
+import { useRef } from 'react';
 import { useAuth } from '../../hooks/auth';
 
 import { BsSearch } from 'react-icons/bs';
-import { PiReceiptLight } from 'react-icons/pi';
+import { FaGear } from 'react-icons/fa6';
 import { GoSignOut } from 'react-icons/go';
 import { FiMenu } from 'react-icons/fi';
 import { AiOutlineClose } from 'react-icons/ai';
@@ -51,27 +51,23 @@ export function Header({ admin = false, search }) {
       <Input
         type="search"
         icon={BsSearch}
-        placeholder="Busque por pratos ou ingredientes"
+        placeholder="Busca por piezas y categorias"
         search={search}
       />
 
-      {
-        admin ? (
-          <Link to="/dish/create">
-            <Button icon={null} title="Novo produto" quantity={0} height />
-          </Link>
-        ) : (
-          ''
-        )
-        // (
-        //   <Button
-        //     icon={PiReceiptLight}
-        //     title={'Pedidos (0)'}
-        //     quantity={0}
-        //     height
-        //   />
-        // )
-      }
+      {admin ? (
+        <Link to="/dish/create">
+          <Button
+            icon={FaGear}
+            iconSize={24}
+            title="Nuevo produto"
+            quantity={0}
+            height
+          />
+        </Link>
+      ) : (
+        ''
+      )}
 
       <Menu className="menu">
         <Input

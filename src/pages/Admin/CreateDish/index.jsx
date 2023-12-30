@@ -66,7 +66,7 @@ export function CreateDish() {
       quantity,
     });
 
-    alert('Prato criada com sucesso!');
+    alert('Producto creado exitosamente!');
     navigate('/');
   }
 
@@ -90,7 +90,7 @@ export function CreateDish() {
           <label>
             Categoria
             <select id="category" onChange={handleCategory}>
-              <option value="">Selecione uma opção</option>
+              <option value="">Seleccione una opción</option>
               <option value="Bujias">Bujias</option>
               <option value="Tren delantero">Tren delantero</option>
               <option value="Terminal">Terminal</option>

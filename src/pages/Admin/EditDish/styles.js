@@ -73,7 +73,7 @@ export const Edit = styled.form`
       color: ${({ theme }) => theme.COLORS.LIGHT};
       font-size: 1.6rem;
 
-      background: ${({ theme }) => theme.COLORS.DARK_800};
+      background: ${({ theme }) => theme.COLORS.BG_GRAY};
     }
   }
 
@@ -100,10 +100,10 @@ export const Edit = styled.form`
     margin-left: auto;
 
     border-radius: 0.5rem;
-    background: ${({ theme }) => theme.COLORS.DARK_800};
+    background: ${({ theme }) => theme.COLORS.TOMATO_400};
 
     &[type='submit'] {
-      background: ${({ theme }) => theme.COLORS.TOMATO_400};
+      background: ${({ theme }) => theme.COLORS.LIGHT_BLUE_GRADIENT};
     }
 
     color: ${({ theme }) => theme.COLORS.LIGHT};

@@ -9,15 +9,15 @@ export function Card({ $type, title, $value }) {
     <Container $type={$type}>
       <div>
         <span>{title}</span>
-        {$type == 'income' ? (
-          <FaRegArrowAltCircleUp size={24} style={{ color: '#49AA26' }} />
-        ) : $type == 'expense' ? (
-          <FaRegArrowAltCircleDown size={24} style={{ color: '#E92929' }} />
-        ) : (
-          <MdAttachMoney size={24} style={{ color: '#FFFFFF' }} />
-        )}
+        <h2>$ {$value}</h2>
       </div>
-      <h2>$ {$value}</h2>
+      {$type == 'income' ? (
+        <FaRegArrowAltCircleUp size={24} style={{ color: '#49AA26' }} />
+      ) : $type == 'expense' ? (
+        <FaRegArrowAltCircleDown size={24} style={{ color: '#E92929' }} />
+      ) : (
+        <MdAttachMoney size={24} style={{ color: '#FFFFFF' }} />
+      )}
     </Container>
   );
 }

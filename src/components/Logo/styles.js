@@ -21,10 +21,7 @@ export const Container = styled.h1`
       object-fit: cover;
     }
 
-    > a span {
-      font-size: ${({ theme }) => theme.FONT.LARGE};
-      color: ${({ theme }) => theme.COLORS.LIGHT};
-    }
+    position: relative;
   }
 
   span {
@@ -33,6 +30,9 @@ export const Container = styled.h1`
     font-size: 1.2rem;
     font-weight: 400;
     line-height: 160%;
+    position: absolute;
+    bottom: 0.2rem;
+    right: 0.9rem;
   }
 
   @media (max-width: ${breakpoints.MD}) {

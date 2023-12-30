@@ -77,7 +77,7 @@ export const Edit = styled.form`
     color: ${({ theme }) => theme.COLORS.LIGHT_400};
     font-size: 1.6rem;
 
-    background: ${({ theme }) => theme.COLORS.DARK_800};
+    background: ${({ theme }) => theme.COLORS.BG_GRAY};
 
     option {
       text-transform: lowercase;
@@ -110,7 +110,7 @@ export const Edit = styled.form`
 
     border-radius: 0.8rem;
     border: none;
-    background-color: ${({ theme }) => theme.COLORS.DARK_800};
+    background: ${({ theme }) => theme.COLORS.BG_GRAY};
 
     font-size: 1.6rem;
 
@@ -137,7 +137,7 @@ export const Edit = styled.form`
     margin-left: auto;
 
     border-radius: 0.5rem;
-    background: ${({ theme }) => theme.COLORS.TOMATO_400};
+    background: ${({ theme }) => theme.COLORS.LIGHT_BLUE_GRADIENT};
 
     color: ${({ theme }) => theme.COLORS.LIGHT};
 

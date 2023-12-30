@@ -7,16 +7,30 @@ export const Container = styled.div`
   height: 100vh;
 
   display: flex;
-  flex-direction: column;
+  align-items: flex-start;
+
+  > div {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+  }
 
   /* MENU */
   header.menu-active + main {
     display: none;
   }
+
+  overflow: hidden;
 `;
 
 export const Main = styled.main`
-  margin-inline: clamp(2.4rem, 9.783vw - 1.787rem, 12.3rem);
+  max-height: 100vh;
+
+  padding-bottom: clamp(2.4rem, 9.783vw - 1.787rem, 12.3rem);
+
+  overflow-y: auto;
 `;
 
 export const DashBoard = styled.div`

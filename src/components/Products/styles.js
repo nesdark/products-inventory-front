@@ -39,7 +39,8 @@ export const Container = styled.section`
   }
 
   table tbody td {
-    background-color: #0d1d25;
+    background-color: ${({ theme }) => theme.COLORS.BG_GRAY};
+
     padding: 2rem 3.2rem;
 
     color: white;

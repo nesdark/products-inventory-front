@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
+import theme from './theme';
 
 export default createGlobalStyle`
   :root {
@@ -15,7 +16,7 @@ export default createGlobalStyle`
   body {
     font-size: 62.5%;
 
-    background-color: ${({ theme }) => theme.COLORS.DARK_400};
+    background-color: ${({ theme }) => theme.COLORS.BG};
     color: ${({ theme }) => theme.COLORS.LIGHT};
 
     -webkit-font-smoothing: antialiased;
@@ -49,4 +50,29 @@ export default createGlobalStyle`
     filter: brightness(1.1);
     
   }
+
+  /* SCROLLBAR */
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+  margin-right: 10px;
+}
+
+::-webkit-scrollbar-corner {
+  border: none;
+  background: none;
+}
+
+::-webkit-scrollbar-thumb {
+  background: ${({ theme }) => theme.COLORS.LIGHT_BLUE_GRADIENT};
+  border-radius: 3px;
+  cursor: move;
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+  border: none;
+}
+
 `;

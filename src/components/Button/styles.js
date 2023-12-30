@@ -13,12 +13,11 @@ export const Container = styled.button`
   align-items: center;
   gap: 0.8rem;
 
-  border: none;
-  border-radius: 0.5rem;
-
   padding: 1.2rem 4.65rem;
 
-  background-color: ${({ theme }) => theme.COLORS.TOMATO_100};
+  border-radius: 0.5rem;
+  border: 1px solid rgba(10, 82, 5, 0.64);
+  background: ${({ theme }) => theme.COLORS.LIGHT_BLUE_GRADIENT};
   font-size: 1.4rem;
   font-family: ${({ theme }) => theme.FONT.FAMILY_SECONDARY};
   color: ${({ theme }) => theme.COLORS.LIGHT};
