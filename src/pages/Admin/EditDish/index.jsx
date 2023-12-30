@@ -101,7 +101,7 @@ export function EditDish() {
                     onChange={handleCategory}
                     value={category}
                   >
-                    <option value="">Selecione uma opção</option>
+                    <option value="">Seleciona una opción</option>
                     <option value="Bujias">Bujias</option>
                     <option value="Tren delantero">Tren delantero</option>
                     <option value="Terminal">Terminal</option>
