@@ -3,6 +3,7 @@ import { FaUserCircle } from 'react-icons/fa';
 import { TbLogout2 } from 'react-icons/tb';
 import { IoIosMenu } from 'react-icons/io';
 import { RiShutDownLine } from 'react-icons/ri';
+import { LuListPlus } from 'react-icons/lu';
 
 import { Container } from './styles';
 import { useEffect, useState } from 'react';
@@ -60,6 +61,17 @@ export function SideBar() {
               onClick={() => alert('Esta funcionalidad no esta lista')}
             >
               Cierre Diário
+            </div>
+          </button>
+        </li>
+        <li>
+          <button>
+            <LuListPlus />
+            <div
+              className="legend"
+              onClick={() => alert('Esta funcionalidad no esta lista')}
+            >
+              Crear categoria
             </div>
           </button>
         </li>
