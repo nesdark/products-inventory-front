@@ -39,6 +39,10 @@ export const Container = styled.aside`
     font-size: 2rem;
   }
 
+  & ul li button {
+    width: 100%;
+  }
+
   & > div {
     padding-block: 1.8rem;
   }

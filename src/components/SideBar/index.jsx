@@ -4,8 +4,10 @@ import { TbLogout2 } from 'react-icons/tb';
 import { IoIosMenu } from 'react-icons/io';
 import { RiShutDownLine } from 'react-icons/ri';
 import { LuListPlus } from 'react-icons/lu';
+import { GrUpdate } from 'react-icons/gr';
 
 import { Container } from './styles';
+
 import { useEffect, useState } from 'react';
 import { useAuth } from '../../hooks/auth';
 import { Link } from 'react-router-dom';
@@ -42,6 +44,14 @@ export function SideBar() {
             <IoIosMenu />
           </button>
         </li>
+        <li className="newFeatures">
+          <Link to="/changelog">
+            <button>
+              <GrUpdate />
+              <div className="legend">Ver actualizaciones</div>
+            </button>
+          </Link>
+        </li>
         <li>
           <button>
             <FaClockRotateLeft />
@@ -53,6 +63,7 @@ export function SideBar() {
             </div>
           </button>
         </li>
+
         <li>
           <button>
             <RiShutDownLine />
@@ -76,6 +87,7 @@ export function SideBar() {
           </button>
         </li>
       </ul>
+
       <div className="info">
         <button>
           <div
