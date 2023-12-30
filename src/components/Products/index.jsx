@@ -1,7 +1,7 @@
 import { api } from '../../services/api.js';
 import { FaRegTrashCan } from 'react-icons/fa6';
 import { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 
 import { Container } from './styles';
 
@@ -11,8 +11,6 @@ export function Products({ search }) {
   const [products, setProducts] = useState([]);
 
   const navigate = useNavigate();
-
-  let timeoutRunning = false;
 
   useEffect(() => {
     async function fetchProductsBySearch() {
@@ -32,34 +30,15 @@ export function Products({ search }) {
     }
   }, [search]);
 
-  async function handleDeleteProduct(e) {
-    e.preventDefault();
-
+  async function handleDeleteProduct(id) {
     if (!window.confirm('Estas seguro que deseas eliminar el producto?')) {
       return;
     }
 
-    if (!timeoutRunning) {
-      setTimeout(() => {
-        timeoutRunning = false;
-      }, 5000);
-      timeoutRunning = true;
-    }
-
-    let confirmation = () => {
-      return window.confirm('Estas seguro que deseas eliminar el producto?');
-    };
-
-    if (!timeoutRunning) {
-      if (confirmation) {
-        return;
-      }
-    }
-
-    // await api.delete(`/products/${params.id}`);
+    await api.delete(`/products/${id}`);
 
     alert('Producto excluído con éxito!');
-    navigate('/');
+    window.location.reload();
   }
 
   function handleDetails(id) {
@@ -105,7 +84,7 @@ export function Products({ search }) {
                     icon={FaRegTrashCan}
                     size={24}
                     $style="#8d0314"
-                    onClick={handleDeleteProduct}
+                    onClick={() => handleDeleteProduct(product.id)}
                   />
                 </td>
               </tr>
