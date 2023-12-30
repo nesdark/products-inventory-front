@@ -103,8 +103,6 @@ export function EditDish() {
                   >
                     <option value="">Selecione uma opção</option>
                     <option value="Bujias">Bujias</option>
-                    <option value="">Selecione uma opção</option>
-                    <option value="Bujias">Bujias</option>
                     <option value="Tren delantero">Tren delantero</option>
                     <option value="Terminal">Terminal</option>
                     <option value="Rotula">Rotula</option>
