@@ -39,6 +39,7 @@ export function HomeAdmin() {
     }
     fetchPrices();
   });
+
   return (
     <Container>
       <SideBar />

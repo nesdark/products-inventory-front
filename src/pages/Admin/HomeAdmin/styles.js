@@ -17,11 +17,6 @@ export const Container = styled.div`
     flex-direction: column;
   }
 
-  /* MENU */
-  header.menu-active + main {
-    display: none;
-  }
-
   overflow: hidden;
 `;
 

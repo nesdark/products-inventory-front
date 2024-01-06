@@ -9,9 +9,7 @@ import { Container, Main, Info, Ingredients } from './styles';
 import { Footer } from '../../../components/Footer';
 import { Header } from '../../../components/Header';
 import { TextButton } from '../../../components/TextButton';
-import { Button } from '../../../components/Button';
-import { Tag } from '../../../components/Tag';
-import { SellOptions } from '../../../components/SellOptions';
+import { CartOptions } from '../../../components/CartOptions';
 
 export function DishView() {
   const [data, setData] = useState(null);
@@ -44,7 +42,7 @@ export function DishView() {
                   Precio de venta: <span>{data.product.salePrice}</span>
                 </p>
               </div>
-              <SellOptions />
+              <CartOptions productData={data.product} />
             </Info>
           </div>
         </Main>

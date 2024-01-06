@@ -1,15 +1,17 @@
+import { FaCartPlus } from 'react-icons/fa6';
+
 import { useState } from 'react';
 
-import { api } from '../../services/api.js';
+import { useCart } from '../../hooks/cart.jsx';
 
 import { Container, Quantity } from './styles.js';
 import { Button } from '../Button/index.jsx';
 import { useParams, useNavigate } from 'react-router-dom';
 
-export function SellOptions(breakpoint = false) {
-  const [quantity, setQuantity] = useState(0);
+export function CartOptions({ productData }) {
+  const { handleAddProductToCart } = useCart();
 
-  const params = useParams();
+  const [quantity, setQuantity] = useState(0);
 
   const navigate = useNavigate();
 
@@ -23,7 +25,7 @@ export function SellOptions(breakpoint = false) {
     setQuantity(newQuantity);
   }
 
-  async function handleSell(e) {
+  async function handleQuantityValidation(e) {
     e.preventDefault();
 
     if (quantity == 0) {
@@ -32,21 +34,11 @@ export function SellOptions(breakpoint = false) {
       );
     }
 
-    await api
-      .put(`/products/sell/${params.id}?quantity=${quantity}`, {
-        quantity,
-      })
-      .then(() => {
-        alert('Producto actualizado con éxito!');
-        navigate('/');
-      })
-      .catch((error) => {
-        if (error.response) {
-          return alert(error.response.data.message);
-        } else {
-          return alert('No fue posible vender');
-        }
-      });
+    productData.quantity = quantity;
+
+    handleAddProductToCart(productData);
+
+    navigate('/');
   }
 
   return (
@@ -94,7 +86,11 @@ export function SellOptions(breakpoint = false) {
           </svg>
         </button>
       </Quantity>
-      <Button title="Vender" onClick={handleSell} />
+      <Button
+        title="Adicionar"
+        icon={FaCartPlus}
+        onClick={handleQuantityValidation}
+      />
     </Container>
   );
 }

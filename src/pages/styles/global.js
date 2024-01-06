@@ -51,6 +51,19 @@ export default createGlobalStyle`
     
   }
 
+  .sr-only {
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+
+  }
+
   /* SCROLLBAR */
 
 ::-webkit-scrollbar {
