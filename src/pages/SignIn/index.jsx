@@ -23,11 +23,6 @@ export function SignIn() {
 
   const app = useRef();
 
-  let outlined;
-  window.addEventListener('load', function () {
-    outlined = app.current.offsetWidth <= 1024 ? false : true;
-  });
-
   return (
     <Container ref={app}>
       <Logo />
@@ -37,14 +32,12 @@ export function SignIn() {
         <LabelInput
           label="Email"
           placeholder="Exemplo: exemplo@exemplo.com.br"
-          {...outlined}
           onChange={(e) => setEmail(e.target.value)}
         />
         <LabelInput
           type="password"
           label="Senha"
           placeholder="No mínimo 6 caracteres"
-          {...outlined}
           onChange={(e) => setPassword(e.target.value)}
         />
 

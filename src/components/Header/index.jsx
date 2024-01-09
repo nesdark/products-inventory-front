@@ -2,7 +2,7 @@ import { useRef } from 'react';
 import { useAuth } from '../../hooks/auth';
 
 import { BsSearch } from 'react-icons/bs';
-import { FaGear } from 'react-icons/fa6';
+import { FaCartPlus, FaGear } from 'react-icons/fa6';
 import { GoSignOut } from 'react-icons/go';
 import { FiMenu } from 'react-icons/fi';
 import { AiOutlineClose } from 'react-icons/ai';
@@ -55,6 +55,10 @@ export function Header({ admin = false, search }) {
         search={search}
       />
 
+      <Link to="/shopping-cart">
+        <IconButton icon={FaCartPlus} size="32" />
+      </Link>
+
       {admin ? (
         <Link to="/dish/create">
           <Button
@@ -69,25 +73,6 @@ export function Header({ admin = false, search }) {
         ''
       )}
 
-      <Menu className="menu">
-        <Input
-          type="search"
-          icon={BsSearch}
-          placeholder="Busque por pratos ou ingredientes"
-          search={search}
-        />
-        {admin ? (
-          <li onClick={MenuControls.close}>
-            <Link to="/dish/create">
-              <TextButton title="Novo produto" />
-            </Link>
-          </li>
-        ) : null}
-
-        <li onClick={(MenuControls.close, signOut)}>
-          <TextButton title="Sair" />
-        </li>
-      </Menu>
       <Link to="/">
         <IconButton icon={GoSignOut} size="32" onClick={signOut} />
       </Link>
