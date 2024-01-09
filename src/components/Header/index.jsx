@@ -55,9 +55,9 @@ export function Header({ admin = false, search }) {
         search={search}
       />
 
-      {/* <Link to="/shopping-cart">
+      <Link to="/shopping-cart">
         <IconButton icon={FaCartPlus} size="32" />
-      </Link> */}
+      </Link>
 
       {admin ? (
         <Link to="/dish/create">

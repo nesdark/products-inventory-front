@@ -47,6 +47,13 @@ export const Main = styled.div`
 
     padding-right: 5.5rem;
   }
+
+  > button {
+    width: fit-content;
+
+    margin-top: 2rem;
+    margin-inline: auto 5.5rem;
+  }
 `;
 
 export const ShoppingCartTable = styled.table`
@@ -86,30 +93,11 @@ export const ShoppingCartTable = styled.table`
   .prices {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
   }
 
   .costPrice {
     font-size: 1.6rem;
     color: rgb(255 59 83);
-  }
-`;
-
-export const Quantity = styled.td`
-  div {
-    display: flex;
-    gap: 1.6rem;
-
-    input {
-      max-width: 8.6rem;
-
-      background: none;
-      border: none;
-
-      text-align: center;
-      font-size: 2.4rem;
-
-      color: #fff;
-    }
   }
 `;

@@ -1,35 +1,25 @@
 import { FaRegTrashCan } from 'react-icons/fa6';
-import { CiCircleMinus, CiCirclePlus } from 'react-icons/ci';
 
-import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
-import { Container, Main, ShoppingCartTable, Quantity } from './styles';
+import { Container, Main, ShoppingCartTable } from './styles';
 import { Header } from '../../components/Header';
 import { SideBar } from '../../components/SideBar';
 import { IconButton } from '../../components/IconButton';
 
 import { useCart } from '../../hooks/cart';
+import { Button } from '../../components/Button';
 
 export function ShoppingCart() {
-  const id = 27;
-  const total = 1;
+  const { cart, handleSell, removeProduct } = useCart();
 
-  const [cart, setCart] = useState([]);
+  let total = 0;
 
-  function updateQuantity(index, newQuantity) {
-    cart[index].quantity = newQuantity;
-  }
+  const navigate = useNavigate();
 
-  useEffect(() => {
-    async function cartAccess() {
-      const cartAccess = await useCart().cart;
-      setCart(cartAccess);
-      console.log(cartAccess);
-      console.log(cart);
-    }
-    cartAccess();
-  }, []);
+  cart.map((product) => {
+    total += Number(product.totalSalePrice);
+  });
 
   return (
     <Container>
@@ -51,7 +41,7 @@ export function ShoppingCart() {
                 return (
                   <tr>
                     <td className="name">
-                      <Link to={`/dish/${id}`}>{product.title}</Link>
+                      <Link to={`/dish/${product.id}`}>{product.title}</Link>
                     </td>
                     <td>
                       <div className="prices">
@@ -59,24 +49,16 @@ export function ShoppingCart() {
                         <span className="costPrice">$ {product.costPrice}</span>
                       </div>
                     </td>
-                    <Quantity>
-                      <div>
-                        <label htmlFor="quantity" className="sr-only">
-                          Cantidad del producto
-                        </label>
-                        <input
-                          type="number"
-                          placeholder={product.quantity}
-                          id="quantity"
-                        />
-                      </div>
-                    </Quantity>
+                    <td>
+                      <div>{product.quantity}</div>
+                    </td>
                     <td className="subTotal">$ {product.totalSalePrice}</td>
                     <td aria-label="Remove {} from shopping cart">
                       <IconButton
                         icon={FaRegTrashCan}
                         size={24}
                         $style="rgb(255 59 83)"
+                        onClick={() => removeProduct(product.id)}
                       />
                     </td>
                   </tr>
@@ -85,6 +67,13 @@ export function ShoppingCart() {
             </tbody>
           </ShoppingCartTable>
           <p>Total: $ {total}</p>
+          <Button
+            onClick={() => {
+              handleSell();
+              navigate('/');
+            }}
+            title="Vender"
+          ></Button>
         </Main>
       </div>
     </Container>

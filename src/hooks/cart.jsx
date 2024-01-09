@@ -1,6 +1,6 @@
 import { createContext, useContext, useState, useEffect } from 'react';
 
-// import { api } from '../services/api';
+import { api } from '../services/api';
 
 export const CartContext = createContext({});
 
@@ -37,21 +37,32 @@ function CartProvider({ children }) {
     return;
   }
 
-  function handleUpdateProduct({ salePrice, quantity }, index) {
-    cart[index].salePrice = salePrice || cart[index].salePrice;
-    cart[index].quantity = quantity || cart[index].quantity;
-    cart[index].totalSalePrice =
-      Number(cart[index].salePrice) * Number(cart[index].quantity);
+  function removeProduct(productId) {
+    setCart(
+      cart.filter((product) => {
+        if (product.id !== productId) {
+          return product;
+        }
+      })
+    );
   }
 
-  // handleUpdateProduct({ salePrice: 20 }, 0);
+  async function handleSell() {
+    await api.put('/products/sell', { cart });
+
+    const productDeletedId = 24;
+
+    setCart([]);
+  }
 
   useEffect(() => {
     localStorage.setItem('@jbc-inventory:cart', JSON.stringify(cart));
   }, [cart]);
 
   return (
-    <CartContext.Provider value={{ cart, handleAddProductToCart }}>
+    <CartContext.Provider
+      value={{ cart, handleAddProductToCart, handleSell, removeProduct }}
+    >
       {children}
     </CartContext.Provider>
   );

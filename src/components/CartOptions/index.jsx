@@ -20,6 +20,11 @@ export function CartOptions({ productData }) {
   const navigate = useNavigate();
 
   function addQuantity(quantityToAdd) {
+    if (productData.quantity <= quantity) {
+      alert('Stock insuficiente');
+      return;
+    }
+
     const newQuantity = quantity + quantityToAdd;
     setQuantity(newQuantity);
   }
@@ -116,12 +121,12 @@ export function CartOptions({ productData }) {
           </svg>
         </button>
       </Quantity>
-      {/* <Button
+      <Button
         title="Adicionar"
         icon={FaCartPlus}
-        onClick={(e) => handleSell(e)}
-      /> */}
-      <Button title="Vender" onClick={(e) => handleSell(e)} />
+        onClick={(e) => handleQuantityValidation(e)}
+      />
+      {/* <Button title="Vender" onClick={(e) => handleSell(e)} /> */}
     </Container>
   );
 }

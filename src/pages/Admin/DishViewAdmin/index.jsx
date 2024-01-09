@@ -43,6 +43,9 @@ export function DishViewAdmin() {
                 <p>
                   Precio de venta: <span>{data.product.salePrice}</span>
                 </p>
+                <p>
+                  Cantidad: <span>{data.product.quantity}</span>
+                </p>
               </div>
               <CartOptions productData={data.product} />
               <Link to={`/dish/update/${params.id}`}>
