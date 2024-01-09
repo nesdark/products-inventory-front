@@ -16,6 +16,7 @@ export function CartOptions({ productData }) {
 
   const [quantity, setQuantity] = useState(0);
 
+  const params = useParams();
   const navigate = useNavigate();
 
   function addQuantity(quantityToAdd) {
@@ -58,7 +59,7 @@ export function CartOptions({ productData }) {
         quantity,
       })
       .then(() => {
-        alert('Producto actualizado con éxito!');
+        alert('Producto vendido con éxito!');
         navigate('/');
       })
       .catch((error) => {
@@ -115,7 +116,12 @@ export function CartOptions({ productData }) {
           </svg>
         </button>
       </Quantity>
-      <Button title="Adicionar" icon={FaCartPlus} onClick={handleSell} />
+      {/* <Button
+        title="Adicionar"
+        icon={FaCartPlus}
+        onClick={(e) => handleSell(e)}
+      /> */}
+      <Button title="Vender" onClick={(e) => handleSell(e)} />
     </Container>
   );
 }
