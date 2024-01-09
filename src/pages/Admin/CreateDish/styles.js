@@ -51,7 +51,7 @@ export const Edit = styled.form`
     flex-direction: column;
     align-items: left;
 
-    color: ${({ theme }) => theme.COLORS.LIGHT_400};
+    color: ${({ theme }) => theme.COLORS.LIGHT};
 
     font-size: 1.6rem;
     line-height: 100%;
@@ -74,14 +74,10 @@ export const Edit = styled.form`
     border: none;
     border-radius: 0.5rem;
 
-    color: ${({ theme }) => theme.COLORS.LIGHT_400};
+    color: ${({ theme }) => theme.COLORS.LIGHT};
     font-size: 1.6rem;
 
     background: ${({ theme }) => theme.COLORS.BG_GRAY};
-
-    option {
-      text-transform: lowercase;
-    }
   }
 
   .ingredients {

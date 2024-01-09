@@ -38,13 +38,13 @@ function CartProvider({ children }) {
   }
 
   function handleUpdateProduct({ salePrice, quantity }, index) {
-    cart[index].salePrice = salePrice ?? cart[index].salePrice;
-    cart[index].quantity = quantity ?? cart[index].quantity;
+    cart[index].salePrice = salePrice || cart[index].salePrice;
+    cart[index].quantity = quantity || cart[index].quantity;
     cart[index].totalSalePrice =
       Number(cart[index].salePrice) * Number(cart[index].quantity);
   }
 
-  handleUpdateProduct({ salePrice: 20 }, 0);
+  // handleUpdateProduct({ salePrice: 20 }, 0);
 
   useEffect(() => {
     localStorage.setItem('@jbc-inventory:cart', JSON.stringify(cart));

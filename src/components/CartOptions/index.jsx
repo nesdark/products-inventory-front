@@ -8,6 +8,9 @@ import { Container, Quantity } from './styles.js';
 import { Button } from '../Button/index.jsx';
 import { useParams, useNavigate } from 'react-router-dom';
 
+// Temporary
+import { api } from '../../services/api.js';
+
 export function CartOptions({ productData }) {
   const { handleAddProductToCart } = useCart();
 
@@ -39,6 +42,32 @@ export function CartOptions({ productData }) {
     handleAddProductToCart(productData);
 
     navigate('/');
+  }
+
+  async function handleSell(e) {
+    e.preventDefault();
+
+    if (quantity == 0) {
+      return alert(
+        'Por favor seleciona un valor diferente de cero para vender'
+      );
+    }
+
+    await api
+      .put(`/products/sell/${params.id}?quantity=${quantity}`, {
+        quantity,
+      })
+      .then(() => {
+        alert('Producto actualizado con éxito!');
+        navigate('/');
+      })
+      .catch((error) => {
+        if (error.response) {
+          return alert(error.response.data.message);
+        } else {
+          return alert('No fue posible vender');
+        }
+      });
   }
 
   return (
@@ -86,11 +115,7 @@ export function CartOptions({ productData }) {
           </svg>
         </button>
       </Quantity>
-      <Button
-        title="Adicionar"
-        icon={FaCartPlus}
-        onClick={handleQuantityValidation}
-      />
+      <Button title="Adicionar" icon={FaCartPlus} onClick={handleSell} />
     </Container>
   );
 }

@@ -92,43 +92,157 @@ export function CreateDish() {
             <select id="category" onChange={handleCategory}>
               <option value="">Seleccione una opción</option>
               <option value="Bujias">Bujias</option>
+              <option value="Estopera sello bujias">
+                Estopera sello bujias
+              </option>
+              <option value="Estopera sello">Estopera sello</option>
               <option value="Tren delantero">Tren delantero</option>
               <option value="Terminal">Terminal</option>
               <option value="Rotula">Rotula</option>
-              <option value="GEMELOS BARRA ESTABILIZADORA">
-                GEMELOS BARRA ESTABILIZADORA
+              <option value="Gemeles barra estabilizadora">
+                Gemeles barra estabilizadora
               </option>
-              <option value="BUJE PEQUENO TIJERA DELANTERA">
-                BUJE PEQUEÑO TIJERA DELANTERA
+              <option value="Buje pequeño tijera delantera">
+                Buje pequeño tijera delantera
               </option>
-              <option value="BUJE GRANDE TIJERA ">BUJE GRANDE TIJERA </option>
-              <option value="GOMAS U O GOMAS SECTOR">
-                GOMAS U O GOMAS SECTOR
+              <option value="Buje grande tijera">Buje grande tijera</option>
+              <option value="Gomas u o gomas sector">
+                Gomas u o gomas sector
               </option>
-              <option value="BASE AMORTIGUADOR DELANTERA">
-                BASE AMORTIGUADOR DELANTERA
+              <option value="Base amortiguador delantera">
+                Base amortiguador delantera
               </option>
-              <option value="RODAMIENTO DELANTERO">RODAMIENTO DELANTERO</option>
-              <option value="BOCINA DELANTERAS">BOCINA DELANTERAS</option>
-              <option value="MOZO TRASERO - RODAMIENTO TRASERO">
-                MOZO TRASERO - RODAMIENTO TRASERO
+              <option value="Rodamiento delantero">Rodamiento delantero</option>
+              <option value="Bocina delanteras">Bocina delanteras</option>
+              <option value="Mozo trasero - Rodamiento trasero">
+                Mozo trasero - Rodamiento trasero
               </option>
-              <option value="RODAMIENTO BASE AMORTIGUADOR">
-                RODAMIENTO BASE AMORTIGUADOR
+              <option value="Rodamiento base amortiguador">
+                Rodamiento base amortiguador
               </option>
-              <option value="GOMA BARRA ESTABILIZADORA DELANTERA">
-                GOMA BARRA ESTABILIZADORA DELANTERA
+              <option value="Goma barra estabilizadora delantera">
+                Goma barra estabilizadora delantera
               </option>
-              <option value="TIJERA - BRAZOS OSCILANTES - DELANTERO">
-                TIJERA - BRAZOS OSCILANTES - DELANTERO
+              <option value="Tijera - Brazos oscilantes - Delantero">
+                Tijera - Brazos oscilantes - Delantero
               </option>
-              <option value="PUNTAS DE TRIPOIDE">PUNTAS DE TRIPOIDE</option>
-              <option value="COPA CAJA">COPA CAJA</option>
-              <option value="TRICETA">TRICETA</option>
-              <option value="SOPORTES MOTOR Y CAJA">
-                SOPORTES MOTOR Y CAJA
+              <option value="Puntas de tripoides">Puntas de tripoides</option>
+              <option value="Copa caja">Copa caja</option>
+              <option value="Triceta">Triceta</option>
+              <option value="Soportes motor y caja">
+                Soportes motor y caja
               </option>
-              <option value="MUNON">MUNON</option>
+              <option value="Muñon">Muñon</option>
+              <option value="Anillos">Anillos</option>
+              <option value="Concha bancada">Concha bancada</option>
+              <option value="Concha biela">Concha biela</option>
+              <option value="Concha axial">Concha axial</option>
+              <option value="Válvula admisión">Válvula admisión</option>
+              <option value="Válvula escapé">Válvula escapé</option>
+              <option value="Kit de cadena">Kit de cadena</option>
+              <option value="Juego de empaque">Juego de empaque</option>
+              <option value="Pistones">Pistones</option>
+              <option value="Empacadura camara">Empacadura camara</option>
+              <option value="Empacadura tapa válvula">
+                Empacadura tapa válvula
+              </option>
+              <option value="Empacadura múltiple admisión">
+                Empacadura múltiple admisión
+              </option>
+              <option value="Empacadura múltiple escape">
+                Empacadura múltiple escape
+              </option>
+              <option value="Bomba agua">Bomba agua</option>
+              <option value="Bomba de aceite">Bomba de aceite</option>
+              <option value="Polea lisa">Polea lisa</option>
+              <option value="Polea acanalada">Polea acanalada</option>
+              <option value="Polea grande">Polea grande</option>
+              <option value="Polea pequeña">Polea pequeña</option>
+              <option value="Tensores">Tensores</option>
+              <option value="Estopera cigüeñal delantera">
+                Estopera cigüeñal delantera
+              </option>
+              <option value="Estopera leva">Estopera leva</option>
+              <option value="Estopera cigüeñal trasera">
+                Estopera cigüeñal trasera
+              </option>
+              <option value="Estopera rueda delantera">
+                Estopera rueda delantera
+              </option>
+              <option value="Estopera rueda trasera">
+                Estopera rueda trasera
+              </option>
+              <option value="Estopera bomba aceite">
+                Estopera bomba aceite
+              </option>
+              <option value="Estopera copa caja">Estopera copa caja</option>
+              <option value="Estopera sello bujias">
+                Estopera sello bujias
+              </option>
+              <option value="Estopera trípoide">Estopera trípoide</option>
+              <option value="Correas tiempo">Correas tiempo</option>
+              <option value="Filtro aire">Filtro aire</option>
+              <option value="Bobina encendido">Bobina encendido</option>
+              <option value="Tapa aceite">Tapa aceite</option>
+              <option value="Automático">Automático</option>
+              <option value="Kit cajetín">Kit cajetín</option>
+              <option value="Cilindro de ignición">Cilindro de ignición</option>
+              <option value="Chupones de bobina">Chupones de bobina</option>
+              <option value="Manillas">Manillas</option>
+              <option value="Buje grande">Buje grande</option>
+              <option value="Buje pequeño">Buje pequeño</option>
+              <option value="Módulos">Módulos</option>
+              <option value="Envase de agua">Envase de agua</option>
+              <option value="Tapas envase">Tapas envase</option>
+              <option value="Goma copa caja">Goma copa caja</option>
+              <option value="Goma trípoide">Goma trípoide</option>
+              <option value="Pastilla delantera freno">
+                Pastilla delantera freno
+              </option>
+              <option value="Pastilla freno trasera">
+                Pastilla freno trasera
+              </option>
+              <option value="Banda de freno trasera">
+                Banda de freno trasera
+              </option>
+              <option value="Kit carburador">Kit carburador</option>
+              <option value="Sensores">Sensores</option>
+              <option value="Flotadores">Flotadores</option>
+              <option value="Tornillos">Tornillos</option>
+              <option value="Válvula vvt-i">Válvula vvt-i</option>
+              <option value="Válvula PCV">Válvula PCV</option>
+              <option value="Capsula presión de aceite">
+                Capsula presión de aceite
+              </option>
+              <option value="Collarín">Collarín</option>
+              <option value="Kit embrague">Kit embrague</option>
+              <option value="Termostato">Termostato</option>
+              <option value="Bombin inferior croche">
+                Bombin inferior croche
+              </option>
+              <option value="Bombin superior croche">
+                Bombin superior croche
+              </option>
+              <option value="Electroventiladores">Electroventiladores</option>
+              <option value="Flejes metalicos">Flejes metalicos</option>
+              <option value="Carrocería">Carrocería</option>
+              <option value="Cable bujía">Cable bujía</option>
+              <option value="Microfiltros">Microfiltros</option>
+              <option value="Silicon">Silicon</option>
+              <option value="Filtro aceite">Filtro aceite</option>
+              <option value="Conectores">Conectores</option>
+              <option value="Filtro gasolina malla">
+                Filtro gasolina malla
+              </option>
+              <option value="Tapa rosca módulo">Tapa rosca módulo</option>
+              <option value="Correas de servicio">Correas de servicio</option>
+              <option value="Puente cardan">Puente cardan</option>
+              <option value="Cepillo limpia parabrisas">
+                Cepillo limpia parabrisas
+              </option>
+              <option value="Kit de varillaje">Kit de varillaje</option>
+              <option value="Kit palanca">Kit palanca</option>
+              <option value="Envase de dirección">Envase de dirección</option>
             </select>
           </label>
           <LabelInput
